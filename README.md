@@ -14,7 +14,8 @@
 - Create contact forms via shortcode.  
 - Store submissions as a Custom Post Type (`cfp_submission`).  
 - Nonce security and form validation included.  
-- Easy to style using the included CSS file (`assets/frontend.css`).  
+- Easy to style using the included CSS file (`assets/frontend.css`).
+- csv export, search, filter coming soon
 
 ---
 
