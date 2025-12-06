@@ -29,7 +29,7 @@ class CFP_Contact_Form{
          <input type="hidden" name="cfp_nonce" value="<?php echo esc_attr($nonce)?>">
 
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" id="name" name="name" required minlength="2"><br>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
@@ -39,8 +39,21 @@ class CFP_Contact_Form{
 
             <button type="submit" name="cfp_submission" value="Submit">Send Message</button>
          </form>
-         <div id="contact-form-pro-result"></div>
-        <?php
+         <div id="contact-form-pro-result">
+            <?php if (isset($_GET['cfp_error'])): ?>
+            <div>
+            <?php echo esc_html($_GET['cfp_error']); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['cfp_success'])): ?>
+            <div>
+                Thank you! Your message has been submitted.
+            </div>
+            <?php endif; ?>
+
+            </div>
+            <?php
 
 
         return ob_get_clean();
